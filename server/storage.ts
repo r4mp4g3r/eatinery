@@ -89,6 +89,7 @@ export class DatabaseStorage implements IStorage {
       query = query.where(and(...filters));
     }
     
+    // @ts-ignore: workaround for PgSelectBase typing mismatch
     return await query;
   }
 

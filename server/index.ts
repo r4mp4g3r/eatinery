@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 
 (async () => {
   // Initialize database with sample data
-  if (storage.initializeData) {
+  if (typeof (storage as any).initializeData === "function") {
     try {
       await (storage as any).initializeData();
       log("Database initialized successfully");
